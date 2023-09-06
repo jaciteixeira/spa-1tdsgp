@@ -1,5 +1,6 @@
-import { useLinkClickHandler, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ListaProdutos } from "../components/ListaProdutos";
+import { useState } from "react";
 
 export default function EditarProdutos() {
 
@@ -9,10 +10,20 @@ export default function EditarProdutos() {
   const {id} = useParams();
 
     //Utilizando o filter na Lista de Produtos para recuperar um produto através do id como parâmetro.
-    const prodRecuperadoPorId = ListaProdutos.filter( (produto) => {
-        if(produto.id == id){
-          return produto;
-        }
+    // const prodRecuperadoPorId = ListaProdutos.filter( (produto) => {
+    //     if(produto.id == id){
+    //       return produto;
+    //     }
+    // });
+
+    const prodRecuperadoPorId = ListaProdutos.filter(produto => produto.id == id);
+
+    const[produto,setProduto] = useState({
+      id: prodRecuperadoPorId[0].id,
+      nome: prodRecuperadoPorId[0].nome,
+      preco: prodRecuperadoPorId[0].preco,
+      desc: prodRecuperadoPorId[0].desc,
+      img: prodRecuperadoPorId[0].img
     });
 
     const handlerEditarProduto = (event) => {
@@ -23,13 +34,18 @@ export default function EditarProdutos() {
     <>
         <div>
             <h1>EDITAR-PRODUTOS</h1>
-            <form action="#">
+            <form action="#" method="get">
               <fieldset>
                 <legend>EDITAR PRODUTO</legend>
                 <div>
                 <label htmlFor="idProduto">Nome Produto:</label>
-                  <input type="text" name="nomeProduto" id="idProduto" value={prodRecuperadoPorId[0].nome} onChange={handlerEditarProduto} contentEditable="false"/>
+                  <input type="text" name="nome" id="idProduto" defaultValue={produto.nome} onChange={handlerEditarProduto}/>
                 </div>
+                <div>
+                  <label htmlFor="idPreco">Preço Produto:</label>
+                  <input type="text" name="nome" id="idProduto" defaultValue={produto.nome} onChange={handlerEditarProduto} />
+                </div>
+                
                 <div>
                   <button>EDITAR</button>
                 </div>
