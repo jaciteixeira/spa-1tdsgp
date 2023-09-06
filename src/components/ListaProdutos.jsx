@@ -1,5 +1,5 @@
 export const ListaProdutos = [
-    {id:1, nome: 'Teclado', desc: 'Teclado Gamer', preco: 100, img: 'https://picsum.photos/100/200'},
+    {id:1, nome: 'Teclado', desc: 'Teclado Gamer', preco: 100, img: 'https://picsum.photos/200/300'},
     {id:2, nome: 'Mouse', desc: 'Mouse Gamer', preco: 50, img: 'https://picsum.photos/200/300'},
     {id:3, nome: 'Monitor', desc: 'Monitor Gamer', preco: 500, img: 'https://picsum.photos/200/300'},
     {id:4, nome: 'Gabinete', desc: 'Gabinete Gamer', preco: 200, img: 'https://picsum.photos/200/300'},

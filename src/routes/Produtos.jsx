@@ -5,10 +5,18 @@ import "./Produtos.css";
 
 export default function Produtos() {
 
-    const estiloImg = {
-        width: "100px",
-        height: "100px",
-    }
+    // const estiloImg = {
+    //     width: "100px",
+    //     height: "100px",
+    // }
+
+    const estiloCelulas = {
+        width: '10%',
+        textAlign:'center',
+        fontWeight:'bold',
+    };
+
+    
 
   return (
     <>
@@ -27,12 +35,13 @@ export default function Produtos() {
                 </tr>
             
                 {ListaProdutos.map( (produto, indice)=>(
-                        <tr key={indice}>
-                            <td>{produto.id}</td>
-                            <td>{produto.nome}</td>
-                            <td>{produto.desc}</td>
+                        <tr /*style={ {backgroundColor: (produto.id%2 ==0) ? "#dfe2ba" : "#fff"} }*/
+                        className={(produto.id %2 == 0) ? "linhaCinza" : "linhaBranca"} key={indice}>
+                            <td style={estiloCelulas}>{produto.id}</td>
+                            <td style={estiloCelulas}>{produto.nome}</td>
+                            { <td /*style={estiloCelulas}*/>{produto.desc}</td> }
                             <td>{produto.preco}</td>
-                            <td><img style={estiloImg} src={`${produto.img}`} alt={`${produto.desc}`}/></td>
+                            <td><img style={{width:"100px"}} src={`${produto.img}`} alt={`${produto.desc}`}/></td>
                             <td> <Link to={`/editar/produto/${produto.id}`}><Editar/></Link> / <Link to={`/excluir/produto/${produto.id}`}><Excluir/></Link> </td>
                         </tr>
                 ))}
