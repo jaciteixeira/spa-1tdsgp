@@ -40,26 +40,39 @@ export default function Produtos() {
             </div>
 
             <table className={classes.tabelaProd}>
-                <thead>
+                <thead className={classes.tabelaCabecalho}>
                     <tr>
-                        <th className={classes.tabelaCabecalho}>ID</th>
-                        <th className={classes.tabelaCabecalho}>NOME</th>
-                        <th className={classes.tabelaCabecalho}>DESCRIÇÃO</th>
-                        <th className={classes.tabelaCabecalho}>PREÇO</th>
-                        <th className={classes.tabelaCabecalho}>IMG</th>
-                        <th className={classes.tabelaCabecalho}><Editar/> / <Excluir/></th>
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>DESCRIÇÃO</th>
+                        <th>PREÇO</th>
+                        <th>IMG</th>
+                        <th><Editar/> / <Excluir/></th>i was here since yesterday
 
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className={classes.tabelaCorpo}>
                     {novaListaProdutos.map( (produto, indice)=>(
-                            <tr className={classes.tabelaLinha} key={indice}>
-                                <td className={classes.tabelaDados}>{produto.id}</td>
-                                <td className={classes.tabelaDados}>{produto.nome}</td>
-                                <td className={classes.tabelaDados}>{produto.desc}</td>
-                                <td className={classes.tabelaDados}>{produto.preco}</td>
-                                <td className={classes.tabelaDados}><img className={classes.tblImg} src={`${produto.img}`} alt={`${produto.desc}`}/></td>
-                                <td className={classes.tabelaDados}> <Link to={`/editar/produto/${produto.id}`}><Editar/></Link> / <Link to={`/excluir/produto/${produto.id}`}><Excluir/></Link> </td>
+                            <tr key={indice}>
+                                <td>{produto.id}</td>
+                                <td>{produto.nome}</td>
+                                <td>{produto.desc}</td>
+                                <td>{produto.preco}</td>
+                                <td>
+                                    <img className={classes.tblImg} 
+                                    src={`${produto.img}`} 
+                                    alt={`${produto.desc}`}/>
+                                </td>
+                                <td> 
+                                    {" "}
+                                    <Link to={`/editar/produto/${produto.id}`}>
+                                        <Editar/>
+                                    </Link> {" "}
+                                    / {" "}
+                                    <Link to={`/excluir/produto/${produto.id}`}>
+                                        <Excluir/>
+                                    </Link> {" "}
+                                </td>
                             </tr>
                     ))}
                 </tbody>
