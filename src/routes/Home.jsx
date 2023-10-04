@@ -1,5 +1,6 @@
 export default function Home(){
 
+    document.title = "HOME";
     return(
         <>
             <div>

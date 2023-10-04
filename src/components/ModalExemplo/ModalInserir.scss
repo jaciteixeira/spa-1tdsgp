@@ -1,0 +1,68 @@
+.container {
+    $backColorModal: rgba(0, 0, 0, 0.8);
+    $textColor: #fff;
+    $familiaDaFonte: Arial, Helvetica, sans-serif;
+    $tamanhoDaFonte: 1.5rem;
+    $arredondamentoDaBorda: 5px;
+    $bordaPadrao: solid 2px #ccc;
+    $visibilida: block;
+
+    // background-color: red;
+    
+
+    h1 {
+        text-align: center;
+    }
+
+    @mixin formInput($largura, $altura, $margem) {
+        input {
+            display: $visibilida;
+            width: $largura;
+            height: $altura;
+            margin: $margem;
+            border-radius: $arredondamentoDaBorda;
+            border: $bordaPadrao;
+            padding: 0 10Px;
+        }
+    }
+
+    form {
+        width: 85%;
+        margin: 0 auto;
+        div {
+            margin: 2% 0;
+            @include formInput(70%, 40px,0 auto 1% auto);
+
+             label{
+                display: $visibilida;
+                width: 70%;
+                margin: 0 auto;
+             }
+
+             button{
+                border: #000000;
+                border-radius: $arredondamentoDaBorda;
+                background-color: #008000;
+                width: 40%;
+                height: 60px;
+                margin: 0 auto;
+                display: $visibilida;
+                color: $textColor;
+                font-size: $tamanhoDaFonte;
+                font-weight: bold;
+                transition: background-color 250ms, color 250ms;
+
+                &:hover{
+                    background-color: #c1cbc1;
+                    color: #151212;
+                }
+
+                &:active{
+                    background-color: #c70529;
+                    color: $textColor;
+                }
+
+             }
+        }
+    }
+}
