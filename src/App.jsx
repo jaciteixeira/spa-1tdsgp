@@ -6,13 +6,13 @@ import style from "./App.module.css";
 export default function App() {
 
   return (
-    <>
-    <div className="container">
-        <Cabecalho className={style.container}/>
+    
+    <div className={style.container}>
+        <Cabecalho/>
         <Outlet/>
         <Rodape/>
     </div>
-    </>
+    
   )
 
 }

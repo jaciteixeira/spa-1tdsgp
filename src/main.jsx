@@ -8,7 +8,7 @@ import Home from './routes/Home.jsx';
 import Produtos from './routes/Produtos.jsx';
 import EditarProdutos from './routes/EditarProdutos.jsx';
 import Error from './routes/Error.jsx';
-import ExcluirProduto from './routes/ExcluirProduto.jsx';
+import ExcluirProduto from './routes/ExcluirProduto/ExcluirProduto.jsx';
 
 const router = createBrowserRouter(
   [
